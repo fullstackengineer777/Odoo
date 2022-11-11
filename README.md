@@ -1,0 +1,2 @@
+# Odoo
+Python Odoo module

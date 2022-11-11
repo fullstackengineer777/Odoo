@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+   <data>
+            <!--School Management Form View-->
+        <record id="school_management_view_form" model="ir.ui.view">
+                <field name="name">student.view.form</field>
+                <field name="model">student.student</field>
+                <field name="arch" type="xml">
+               <form string="School">
+                   <sheet>
+                       <group string="School Management">
+                           <group>
+                               <field name="name"/>
+                               <field name="photo"/>
+                           </group>
+                           <group>
+                               <field name="age"/>
+                               <field name="gender"/>
+                           </group>
+                           <group>
+                           </group>
+                           <group>
+                               <field name="student_dob"/>
+                               <field name="student_blood_group"/>
+                           </group>
+                       </group>
+                   </sheet>
+                 </form>
+              </field>
+        </record>
+               <!--School Management Tree View-->
+        <record id="school_management_view_tree" model="ir.ui.view">
+           <field name="name">student.tree</field>
+           <field name="model">student.student</field>
+           <field name="arch" type="xml">
+               <tree>
+                   <field name="name" string="Name" required="1"/>
+                   <field name="age" string="Age" required="1"/>
+               </tree>
+           </field>
+        </record>
+               <!--School Management Action-->
+        <record id="action_school_management" model="ir.actions.act_window">
+           <field name="name">Scrapped Data Management</field>
+           <field name="res_model">student.student</field>
+           <field name="view_mode">tree,form</field>
+           <field name="help" type="html">
+               <p class="o_view_nocontent_smiling_face">
+                   Scrapped Data will be displayed here.
+               </p>
+           </field>
+        </record>
+    <!-- Parent Menu School Management -->
+    <menuitem id="school_management_menu_root"
+         name="Scrapping Management"
+         sequence="7"/>
+     <!-- Menu School Management -->
+    <menuitem id="school_management_menu"
+         name="Scrapping"
+         parent="school_management_menu_root"
+         action="action_school_management"
+         sequence="0"/>
+   </data>
+</odoo>
